@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Fotos - Teresa Salon</title>
+</head>
+<body>
+    <h1>Adicionando suas fotos...</h1>
+    <p>Este script está adicionando suas 4 fotos à galeria do site.</p>
+    
+    <script>
+        // Adiciona suas fotos ao localStorage
+        const galleryData = [
+            {
+                id: '6',
+                title: 'Stylish Braided Look',
+                description: 'Beautiful braided hairstyle with colorful patterned top and golden bow necklace',
+                image_url: '/gallery-uploads/style-1.jpg',
+                display_order: 6,
+                is_active: true,
+                created_at: new Date().toISOString()
+            },
+            {
+                id: '7',
+                title: 'Urban Braided Style', 
+                description: 'Modern braided look perfect for city lifestyle with elegant accessories',
+                image_url: '/gallery-uploads/style-2.jpg',
+                display_order: 7,
+                is_active: true,
+                created_at: new Date().toISOString()
+            },
+            {
+                id: '8',
+                title: 'Chic Braided Design',
+                description: 'Sophisticated braided hairstyle with fashionable urban outfit',
+                image_url: '/gallery-uploads/style-3.jpg',
+                display_order: 8,
+                is_active: true,
+                created_at: new Date().toISOString()
+            },
+            {
+                id: '9',
+                title: 'Elegant Braided Beauty',
+                description: 'Stunning braided style with golden accessories and contemporary fashion',
+                image_url: '/gallery-uploads/style-4.jpg',
+                display_order: 9,
+                is_active: true,
+                created_at: new Date().toISOString()
+            }
+        ]
+
+        // Get existing gallery data
+        const existingGallery = JSON.parse(localStorage.getItem('gallery') || '[]')
+        
+        // Add new photos
+        const updatedGallery = [...existingGallery, ...galleryData]
+        
+        // Save to localStorage
+        localStorage.setItem('gallery', JSON.stringify(updatedGallery))
+
+        document.body.innerHTML = `
+            <h1>✅ Fotos Adicionadas!</h1>
+            <h2>Suas 4 fotos foram adicionadas com sucesso!</h2>
+            <ul>
+                <li>✅ Stylish Braided Look</li>
+                <li>✅ Urban Braided Style</li>
+                <li>✅ Chic Braided Design</li>
+                <li>✅ Elegant Braided Beauty</li>
+            </ul>
+            <p><strong>Agora abra seu site: <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></strong></p>
+            <p>As fotos aparecerão na seção Gallery!</p>
+            <button onclick="window.open('http://localhost:3000/#gallery', '_blank')">Ver Galeria</button>
+        `
+    </script>
+</body>
+</html>

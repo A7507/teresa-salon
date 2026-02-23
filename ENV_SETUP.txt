@@ -1,0 +1,20 @@
+# Crie este arquivo como .env.local na pasta raiz do projeto
+# Copie e cole o conteúdo abaixo, substituindo com suas credenciais reais
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anonima_aqui
+
+# Stripe Configuration  
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+
+# Stripe Webhook Secret
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+
+# INSTRUÇÕES:
+# 1. Vá ao seu painel Supabase
+# 2. Project Settings > API
+# 3. Copie URL e anon key
+# 4. Substitua nos campos acima
+# 5. Salve como .env.local (na mesma pasta do package.json)
